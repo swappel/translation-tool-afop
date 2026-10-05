@@ -1,0 +1,45 @@
+@use '../../styles/variables' as var;
+@use '../../styles/mixins' as mix;
+
+.sliderContainer {
+  @include mix.center-center;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.sliderOutside {
+  border: lightgray solid 1px;
+  border-radius: 50px;
+  height: var.$slider-height;
+  width: var.$slider-length;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    border-color: darkgray;
+  }
+}
+
+svg {
+  max-width: var.$slider-length;
+  max-height: var.$slider-height;
+}
+
+.sliderCircle {
+  r: calc(var.$slider-circle-diameter / 2 - 4px);
+  cX: calc(var.$slider-height / 2);
+  cy: 12px;
+
+  fill: darkgray;
+
+  transition: transform 0.2s ease, fill 0.2s ease;
+
+  &.sliderCircleOn {
+    fill: lightgray;
+
+    transform: translateX(calc(var.$slider-length - var.$slider-height));
+  }
+
+  &.sliderCircleOff {
+    fill: #878484;
+  }
+}

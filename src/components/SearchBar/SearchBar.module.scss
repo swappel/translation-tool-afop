@@ -1,0 +1,26 @@
+@use '../../styles/variables' as var;
+@use '../../styles/mixins' as mix;
+
+.searchBarContainer, .leftSection, .rightSection {
+  @include mix.center-center;
+  flex-direction: row;
+
+  gap: 8px;
+}
+
+.searchBarContainer {
+  background-color: var.$accent-background-color;
+
+  place-content: space-between;
+
+  padding: 6px;
+  padding-block: 20px;
+}
+
+.pageTitle {
+  padding: 0;
+  margin: 0;
+
+  font-size: var.$text-size-m;
+  font-weight: var.$text-weight-bold;
+}

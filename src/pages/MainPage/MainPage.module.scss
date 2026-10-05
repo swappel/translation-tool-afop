@@ -1,0 +1,14 @@
+@use '../../styles/variables' as var;
+@use '../../styles/mixins' as mix;
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contentSection {
+  @include mix.center-center;
+
+  flex: 1;
+}

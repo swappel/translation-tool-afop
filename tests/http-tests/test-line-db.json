@@ -1,0 +1,31 @@
+{
+  "lines": [
+    {
+      "id": 0,
+      "identifier_be": "",
+      "int1": 0,
+      "int2": 0,
+      "original_text": "",
+      "edited_text": "",
+      "edited": false
+    },
+    {
+      "id": 1,
+      "identifier_be": "GDFSA8GFDGJ23",
+      "int1": 3,
+      "int2": 0,
+      "original_text": "This is the original test text.",
+      "edited_text": "Fì'u lu lì'ukìng a'awve.",
+      "edited": true
+    },
+    {
+      "id": 2,
+      "identifier_be": "IDENTIFIER_BE_HEX",
+      "int1": -1,
+      "int2": 18,
+      "original_text": "I can't believe this is happening <split='0.02'>!",
+      "edited_text": "",
+      "edited": false
+    }
+  ]
+}
