@@ -1,0 +1,391 @@
+           PID: 158162 (electron)
+           TID: 158162 (electron)
+           UID: 1000 (palkxaruna)
+           GID: 1000 (palkxaruna)
+        Signal: 11 (SEGV) si_code: SEGV_MAPERR
+     Timestamp: Mon 2026-10-05 20:35:40 CEST (8s ago)
+  Command Line: $'/mnt/massive/Coding/React/Apps/translation-tool-afop/node_modules/electron/dist/electron ./'
+    Executable: /mnt/massive/Coding/React/Apps/translation-tool-afop/node_modules/electron/dist/electron
+ Control Group: /user.slice/user-1000.slice/user@1000.service/app.slice/app-translation\x2dtool\x2dafop-158162.scope
+          Unit: user@1000.service
+     User Unit: app-translation\x2dtool\x2dafop-158162.scope
+         Slice: user-1000.slice
+     Owner UID: 1000 (palkxaruna)
+       Boot ID: d1df4cf05c3b4d80b050538c366068b5
+    Machine ID: be5b5f863a1749b3a3b50cc33097a24c
+      Hostname: pclanda
+       Storage: /var/lib/systemd/coredump/core.electron.1000.d1df4cf05c3b4d80b050538c366068b5.158162.1791225340000000.zst (present)
+  Size on Disk: 150.3M
+       Message: Process 158162 (electron) of user 1000 dumped core.
+
+                Stack trace of thread 158162:
+                #0  0x00007f2bb724a304 _ZNK7Backend10countLinesEv (FoPTransApp_Final.node + 0x33304)
+                #1  0x00007f2bb7237169 _Z20GetTotalLinesWrapperRKN4Napi12CallbackInfoE (FoPTransApp_Final.node + 0x20169)
+                #2  0x00007f2bb724000f _ZN4Napi7details12CallbackDataIPFNS_5ValueERKNS_12CallbackInfoEES2_E7WrapperEP10napi_env__P20napi_callback_info__ (FoPTransApp_Final.node + 0x2900f)
+                #3  0x000055ee3b754573 n/a (electron + 0x6427573)
+                #4  0x000055ee3b139754 n/a (electron + 0x5e0c754)
+                #5  0x000055ee3b137bc1 n/a (electron + 0x5e0abc1)
+                #6  0x000055ee3b137bc1 n/a (electron + 0x5e0abc1)
+                #7  0x000055ee9b1113c8 n/a (n/a + 0x0)
+                #8  0x000055ee3b134a9c n/a (electron + 0x5e07a9c)
+                #9  0x000055ee3b1347eb n/a (electron + 0x5e077eb)
+                #10 0x000055ee38afadce n/a (electron + 0x37cddce)
+                #11 0x000055ee3927106e _ZN2v88Function4CallENS_5LocalINS_7ContextEEENS1_INS_5ValueEEEiPS5_ (electron + 0x3f4406e)
+                #12 0x000055ee3926fd95 _ZN4node20InternalMakeCallbackEPNS_11EnvironmentEN2v85LocalINS2_6ObjectEEES5_NS3_INS2_8FunctionEEEiPNS3_INS2_5ValueEEENS_13async_contextES9_ (electron + 0x3f42d95)
+                #13 0x000055ee391e08df _ZN4node20InternalMakeCallbackEPN2v87IsolateENS0_5LocalINS0_6ObjectEEENS3_INS0_8FunctionEEEiPNS3_INS0_5ValueEEENS_13async_contextES9_ (electron + 0x3eb38df)
+                #14 0x000055ee3926b009 n/a (electron + 0x3f3e009)
+                #15 0x000055ee3a00cea5 n/a (electron + 0x4cdfea5)
+                #16 0x000055ee3a00c9c9 n/a (electron + 0x4cdf9c9)
+                #17 0x000055ee3a01449e n/a (electron + 0x4ce749e)
+                #18 0x000055ee3a0142c0 n/a (electron + 0x4ce72c0)
+                #19 0x000055ee3964ef50 n/a (electron + 0x4321f50)
+                #20 0x000055ee3964dae6 n/a (electron + 0x4320ae6)
+                #21 0x000055ee3964b7a6 n/a (electron + 0x431e7a6)
+                #22 0x000055ee38873682 n/a (electron + 0x3546682)
+                #23 0x000055ee3886d6c0 n/a (electron + 0x35406c0)
+                #24 0x00007f2bba4fec76 n/a (libglib-2.0.so.0 + 0x61c76)
+                #25 0x00007f2bba500ed7 n/a (libglib-2.0.so.0 + 0x63ed7)
+                #26 0x00007f2bba501055 g_main_context_iteration (libglib-2.0.so.0 + 0x64055)
+                #27 0x000055ee38877286 n/a (electron + 0x354a286)
+                #28 0x000055ee3a3b2a7f n/a (electron + 0x5085a7f)
+                #29 0x000055ee3a3b21b1 n/a (electron + 0x50851b1)
+                #30 0x000055ee3a73dbb1 n/a (electron + 0x5410bb1)
+                #31 0x000055ee3ae549a3 n/a (electron + 0x5b279a3)
+                #32 0x000055ee3ae54aeb n/a (electron + 0x5b27aeb)
+                #33 0x000055ee3ae54097 n/a (electron + 0x5b27097)
+                #34 0x000055ee3ae54e61 n/a (electron + 0x5b27e61)
+                #35 0x000055ee3ae57cf3 n/a (electron + 0x5b2acf3)
+                #36 0x000055ee3ae575aa n/a (electron + 0x5b2a5aa)
+                #37 0x000055ee3ae573c7 n/a (electron + 0x5b2a3c7)
+                #38 0x00007f2bb9027781 n/a (libc.so.6 + 0x27781)
+                #39 0x00007f2bb90278b9 __libc_start_main (libc.so.6 + 0x278b9)
+                #40 0x000055ee3b10f74a _start (electron + 0x5de274a)
+
+                Stack trace of thread 158179:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb90974ec pthread_cond_wait (libc.so.6 + 0x974ec)
+                #3  0x000055ee39274924 n/a (electron + 0x3f47924)
+                #4  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #5  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158186:
+                #0  0x00007f2bb911e46d syscall (libc.so.6 + 0x11e46d)
+                #1  0x00007f2bba52ef9c g_cond_wait_until (libglib-2.0.so.0 + 0x91f9c)
+                #2  0x00007f2bba4c34f7 n/a (libglib-2.0.so.0 + 0x264f7)
+                #3  0x00007f2bba4c366f g_async_queue_timeout_pop (libglib-2.0.so.0 + 0x2666f)
+                #4  0x00007f2bba538e31 n/a (libglib-2.0.so.0 + 0x9be31)
+                #5  0x00007f2bba537b14 n/a (libglib-2.0.so.0 + 0x9ab14)
+                #6  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #7  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158187:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb91119d7 ppoll (libc.so.6 + 0x1119d7)
+                #2  0x00007f2bba500f59 n/a (libglib-2.0.so.0 + 0x63f59)
+                #3  0x00007f2bba501217 g_main_loop_run (libglib-2.0.so.0 + 0x64217)
+                #4  0x00007f2bba3dded4 n/a (libgio-2.0.so.0 + 0x11fed4)
+                #5  0x00007f2bba537b14 n/a (libglib-2.0.so.0 + 0x9ab14)
+                #6  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #7  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158192:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb9097702 pthread_cond_timedwait (libc.so.6 + 0x97702)
+                #3  0x000055ee38e906cb n/a (electron + 0x3b636cb)
+                #4  0x000055ee3887031e n/a (electron + 0x354331e)
+                #5  0x000055ee3a3afbfd n/a (electron + 0x5082bfd)
+                #6  0x000055ee3a3afb6f n/a (electron + 0x5082b6f)
+                #7  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #8  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #9  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158196:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb90974ec pthread_cond_wait (libc.so.6 + 0x974ec)
+                #3  0x000055ee38e908bf n/a (electron + 0x3b638bf)
+                #4  0x000055ee38e9018a n/a (electron + 0x3b6318a)
+                #5  0x000055ee38867ddb n/a (electron + 0x353addb)
+                #6  0x000055ee3a3b2a7f n/a (electron + 0x5085a7f)
+                #7  0x000055ee3a3b21b1 n/a (electron + 0x50851b1)
+                #8  0x000055ee3a3b0bf8 n/a (electron + 0x5083bf8)
+                #9  0x000055ee3a3b085d n/a (electron + 0x508385d)
+                #10 0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #11 0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #12 0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158171:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9120bcb epoll_wait (libc.so.6 + 0x120bcb)
+                #2  0x000055ee3886a14b n/a (electron + 0x353d14b)
+                #3  0x000055ee3a3b2a7f n/a (electron + 0x5085a7f)
+                #4  0x000055ee3a3b21b1 n/a (electron + 0x50851b1)
+                #5  0x000055ee3a3b0bf8 n/a (electron + 0x5083bf8)
+                #6  0x000055ee3a3b0b9d n/a (electron + 0x5083b9d)
+                #7  0x000055ee3a3b085d n/a (electron + 0x508385d)
+                #8  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #9  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #10 0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158169:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb91054cb wait4 (libc.so.6 + 0x1054cb)
+                #2  0x000055ee3aba9611 n/a (electron + 0x587c611)
+                #3  0x000055ee3aba93c6 n/a (electron + 0x587c3c6)
+                #4  0x000055ee3e6f5e30 n/a (electron + 0x93c8e30)
+                #5  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #6  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #7  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158172:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb9097702 pthread_cond_timedwait (libc.so.6 + 0x97702)
+                #3  0x000055ee38e906cb n/a (electron + 0x3b636cb)
+                #4  0x000055ee3887031e n/a (electron + 0x354331e)
+                #5  0x000055ee3a3afbfd n/a (electron + 0x5082bfd)
+                #6  0x000055ee3a3afb6f n/a (electron + 0x5082b6f)
+                #7  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #8  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #9  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158174:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb9097702 pthread_cond_timedwait (libc.so.6 + 0x97702)
+                #3  0x000055ee38e906cb n/a (electron + 0x3b636cb)
+                #4  0x000055ee3887031e n/a (electron + 0x354331e)
+                #5  0x000055ee3a3afbfd n/a (electron + 0x5082bfd)
+                #6  0x000055ee3a3afb6f n/a (electron + 0x5082b6f)
+                #7  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #8  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #9  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158175:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9120bcb epoll_wait (libc.so.6 + 0x120bcb)
+                #2  0x000055ee3886a14b n/a (electron + 0x353d14b)
+                #3  0x000055ee3a3b2a7f n/a (electron + 0x5085a7f)
+                #4  0x000055ee3a3b21b1 n/a (electron + 0x50851b1)
+                #5  0x000055ee3a3b0bf8 n/a (electron + 0x5083bf8)
+                #6  0x000055ee3adb1c67 n/a (electron + 0x5a84c67)
+                #7  0x000055ee3a3b085d n/a (electron + 0x508385d)
+                #8  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #9  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #10 0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158178:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb90974ec pthread_cond_wait (libc.so.6 + 0x974ec)
+                #3  0x000055ee39274924 n/a (electron + 0x3f47924)
+                #4  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #5  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158191:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb9097702 pthread_cond_timedwait (libc.so.6 + 0x97702)
+                #3  0x000055ee38e906cb n/a (electron + 0x3b636cb)
+                #4  0x000055ee3887031e n/a (electron + 0x354331e)
+                #5  0x000055ee3a3afbfd n/a (electron + 0x5082bfd)
+                #6  0x000055ee3a3afb6f n/a (electron + 0x5082b6f)
+                #7  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #8  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #9  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158173:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb9097702 pthread_cond_timedwait (libc.so.6 + 0x97702)
+                #3  0x000055ee38e906cb n/a (electron + 0x3b636cb)
+                #4  0x000055ee3887031e n/a (electron + 0x354331e)
+                #5  0x000055ee3a3afabd n/a (electron + 0x5082abd)
+                #6  0x000055ee3a3afb90 n/a (electron + 0x5082b90)
+                #7  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #8  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #9  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158202:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb9097702 pthread_cond_timedwait (libc.so.6 + 0x97702)
+                #3  0x000055ee38e906cb n/a (electron + 0x3b636cb)
+                #4  0x000055ee3887031e n/a (electron + 0x354331e)
+                #5  0x000055ee3a3afabd n/a (electron + 0x5082abd)
+                #6  0x000055ee3a3afb90 n/a (electron + 0x5082b90)
+                #7  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #8  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #9  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158184:
+                #0  0x00007f2bb911e46d syscall (libc.so.6 + 0x11e46d)
+                #1  0x00007f2bba52e15e g_cond_wait (libglib-2.0.so.0 + 0x9115e)
+                #2  0x00007f2bba4c352d n/a (libglib-2.0.so.0 + 0x2652d)
+                #3  0x00007f2bba538017 n/a (libglib-2.0.so.0 + 0x9b017)
+                #4  0x00007f2bba537b14 n/a (libglib-2.0.so.0 + 0x9ab14)
+                #5  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #6  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158204:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9120bcb epoll_wait (libc.so.6 + 0x120bcb)
+                #2  0x000055ee3886a14b n/a (electron + 0x353d14b)
+                #3  0x000055ee3a3b2a7f n/a (electron + 0x5085a7f)
+                #4  0x000055ee3a3b21b1 n/a (electron + 0x50851b1)
+                #5  0x000055ee3a3b0bf8 n/a (electron + 0x5083bf8)
+                #6  0x000055ee3a3b085d n/a (electron + 0x508385d)
+                #7  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #8  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #9  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158176:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb90974ec pthread_cond_wait (libc.so.6 + 0x974ec)
+                #3  0x000055ee38e908bf n/a (electron + 0x3b638bf)
+                #4  0x000055ee38e9018a n/a (electron + 0x3b6318a)
+                #5  0x000055ee38867ddb n/a (electron + 0x353addb)
+                #6  0x000055ee3a3b2a7f n/a (electron + 0x5085a7f)
+                #7  0x000055ee3a3b21b1 n/a (electron + 0x50851b1)
+                #8  0x000055ee3a3b0bf8 n/a (electron + 0x5083bf8)
+                #9  0x000055ee3a3b085d n/a (electron + 0x508385d)
+                #10 0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #11 0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #12 0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158193:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb91112e5 __poll (libc.so.6 + 0x1112e5)
+                #2  0x000055ee3b0e9f1b n/a (electron + 0x5dbcf1b)
+                #3  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #4  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #5  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158163:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb91112e5 __poll (libc.so.6 + 0x1112e5)
+                #2  0x000055ee3aa283a7 n/a (electron + 0x56fb3a7)
+                #3  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #4  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #5  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158180:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb90974ec pthread_cond_wait (libc.so.6 + 0x974ec)
+                #3  0x000055ee39274924 n/a (electron + 0x3f47924)
+                #4  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #5  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158194:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb9097702 pthread_cond_timedwait (libc.so.6 + 0x97702)
+                #3  0x000055ee38e906cb n/a (electron + 0x3b636cb)
+                #4  0x000055ee3887031e n/a (electron + 0x354331e)
+                #5  0x000055ee3a3afa8d n/a (electron + 0x5082a8d)
+                #6  0x000055ee3a3afb9f n/a (electron + 0x5082b9f)
+                #7  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #8  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #9  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158183:
+                #0  0x00007f2bb911e46d syscall (libc.so.6 + 0x11e46d)
+                #1  0x00007f2bba52e15e g_cond_wait (libglib-2.0.so.0 + 0x9115e)
+                #2  0x00007f2bba4c352d n/a (libglib-2.0.so.0 + 0x2652d)
+                #3  0x00007f2bba4c35a6 g_async_queue_pop (libglib-2.0.so.0 + 0x265a6)
+                #4  0x00007f2bb8679661 n/a (libpangoft2-1.0.so.0 + 0xc661)
+                #5  0x00007f2bba537b14 n/a (libglib-2.0.so.0 + 0x9ab14)
+                #6  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #7  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158190:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9111ac2 read (libc.so.6 + 0x111ac2)
+                #2  0x000055ee3b6b1842 n/a (electron + 0x6384842)
+                #3  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #4  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #5  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158197:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9120bcb epoll_wait (libc.so.6 + 0x120bcb)
+                #2  0x000055ee3a34f693 n/a (electron + 0x5022693)
+                #3  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #4  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158195:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb90974ec pthread_cond_wait (libc.so.6 + 0x974ec)
+                #3  0x000055ee38e9c854 n/a (electron + 0x3b6f854)
+                #4  0x000055ee3af0c677 n/a (electron + 0x5bdf677)
+                #5  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #6  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #7  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158177:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb91209eb epoll_pwait (libc.so.6 + 0x1209eb)
+                #2  0x000055ee391dc858 uv__io_poll (electron + 0x3eaf858)
+                #3  0x000055ee391dbc92 uv_run (electron + 0x3eaec92)
+                #4  0x000055ee3a34dff0 n/a (electron + 0x5020ff0)
+                #5  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #6  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158170:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9120bcb epoll_wait (libc.so.6 + 0x120bcb)
+                #2  0x000055ee3886a14b n/a (electron + 0x353d14b)
+                #3  0x000055ee3a3b2a7f n/a (electron + 0x5085a7f)
+                #4  0x000055ee3a3b21b1 n/a (electron + 0x50851b1)
+                #5  0x000055ee3a3b0bf8 n/a (electron + 0x5083bf8)
+                #6  0x000055ee3a3b085d n/a (electron + 0x508385d)
+                #7  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #8  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #9  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158188:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb91119d7 ppoll (libc.so.6 + 0x1119d7)
+                #2  0x00007f2bba500f59 n/a (libglib-2.0.so.0 + 0x63f59)
+                #3  0x00007f2bba501055 g_main_context_iteration (libglib-2.0.so.0 + 0x64055)
+                #4  0x00007f2bb6fb67be n/a (libdconfsettings.so + 0x77be)
+                #5  0x00007f2bba537b14 n/a (libglib-2.0.so.0 + 0x9ab14)
+                #6  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #7  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158182:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb90a0800 n/a (libc.so.6 + 0xa0800)
+                #3  0x000055ee3a34f79b uv_sem_wait (electron + 0x502279b)
+                #4  0x000055ee3a34de6f n/a (electron + 0x5020e6f)
+                #5  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #6  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158203:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb9094c79 n/a (libc.so.6 + 0x94c79)
+                #2  0x00007f2bb9097702 pthread_cond_timedwait (libc.so.6 + 0x97702)
+                #3  0x000055ee38e906cb n/a (electron + 0x3b636cb)
+                #4  0x000055ee3887031e n/a (electron + 0x354331e)
+                #5  0x000055ee3a3afbfd n/a (electron + 0x5082bfd)
+                #6  0x000055ee3a3afb6f n/a (electron + 0x5082b6f)
+                #7  0x000055ee3a60b130 n/a (electron + 0x52de130)
+                #8  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #9  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+
+                Stack trace of thread 158185:
+                #0  0x00007f2bb90a08f2 n/a (libc.so.6 + 0xa08f2)
+                #1  0x00007f2bb91119d7 ppoll (libc.so.6 + 0x1119d7)
+                #2  0x00007f2bba500f59 n/a (libglib-2.0.so.0 + 0x63f59)
+                #3  0x00007f2bba501055 g_main_context_iteration (libglib-2.0.so.0 + 0x64055)
+                #4  0x00007f2bba5010a2 n/a (libglib-2.0.so.0 + 0x640a2)
+                #5  0x00007f2bba537b14 n/a (libglib-2.0.so.0 + 0x9ab14)
+                #6  0x00007f2bb9098042 n/a (libc.so.6 + 0x98042)
+                #7  0x00007f2bb912072c n/a (libc.so.6 + 0x12072c)
+                ELF object binary architecture: AMD x86-64
