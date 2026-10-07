@@ -1,8 +1,11 @@
 import styles from "./SearchBar.module.scss";
-import OnOffSlider from "../OnOffSlider/OnOffSlider.tsx";
-import {useState} from "react";
 
-function SearchBar() {
+interface SearchBarProps {
+    onPageSizeChange: (size: number) => void,
+    pageSize: number
+}
+
+function SearchBar({ onPageSizeChange, pageSize }: SearchBarProps) {
     return (
         <div className={styles.searchBarContainer}>
             <div className={styles.leftSection}>
@@ -11,6 +14,13 @@ function SearchBar() {
                     type={"text"}
                     placeholder={"Search lines here"}
                     spellCheck={"false"}
+                />
+
+                <input
+                    className={styles.pageSizeInput}
+                    type="number"
+                    value={pageSize}
+                    onChange={(e) => onPageSizeChange(Number(e.target.value))}
                 />
 
                 <button>More settings...</button>
