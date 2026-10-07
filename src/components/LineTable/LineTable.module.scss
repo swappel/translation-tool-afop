@@ -1,0 +1,7 @@
+@use '../../styles/variables' as var;
+@use '../../styles/mixins' as mix;
+
+.paginationControls {
+  display: flex;
+  flex-direction: row;
+}
