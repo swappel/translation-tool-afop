@@ -127,7 +127,6 @@ function FileSelectionModal({ onComplete }: FileSelectionModalProps) {
                     </div>
                 </div>
 
-                {/* Progress Bar UI */}
                 {isScanning && (
                     <div style={{ marginTop: '1rem', width: '100%' }}>
                         <p style={{ color: '#fff', marginBottom: '0.25rem' }}>

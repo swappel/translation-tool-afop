@@ -5,3 +5,36 @@
   display: flex;
   flex-direction: row;
 }
+
+.lineTable {
+  min-width: 100vw;
+
+  border-collapse: collapse;
+  border: 1px solid lightgray;
+
+  table-layout: fixed;
+
+  td, th {
+    border: 1px solid lightgray;
+  }
+
+  td {
+    padding: 10px;
+  }
+}
+
+.lineTableHeader {
+  background-color: cornflowerblue;
+}
+
+.lineTableHeaderEntry {
+  padding-block: 10px;
+}
+
+.lineTableIndexHeader {
+  width: 80px;
+}
+
+.lineTableHashHeader {
+  width: 350px;
+}

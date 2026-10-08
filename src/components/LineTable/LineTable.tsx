@@ -1,14 +1,14 @@
 import styles from "./LineTable.module.scss";
 import { useEffect, useState } from "react";
 import type { LocaleLineData } from "../../types/electron";
+import {clsx} from "clsx";
 
 interface LineTableProps {
     pageSize: number;
+    onLineSelect: (lineData: LocaleLineData, index: number) => void;
 }
 
-// TODO: Styling this bitch
-
-function LineTable({ pageSize }: LineTableProps) {
+function LineTable({ pageSize, onLineSelect }: LineTableProps) {
     const [lines, setLines] = useState<LocaleLineData[]>([]);
     const [page, setPage] = useState<number>(0);
     const [totalLines, setTotalLines] = useState<number>(0);
@@ -64,22 +64,27 @@ function LineTable({ pageSize }: LineTableProps) {
         <div className={styles.lineTableWrapper}>
             <table className={styles.lineTable}>
                 <thead className={styles.lineTableHeader}>
-                <tr>
-                    <th scope="col">Index</th>
-                    <th scope="col">Hash</th>
-                    <th scope="col">Content</th>
-                </tr>
+                    <tr>
+                        <th className={clsx(styles.lineTableHeaderEntry, styles.lineTableIndexHeader)} scope="col">Index</th>
+                        <th className={clsx(styles.lineTableHeaderEntry, styles.lineTableHashHeader)} scope="col">Hash</th>
+                        <th className={clsx(styles.lineTableHeaderEntry, styles.lineTableContentHeader)} scope="col">Content</th>
+                    </tr>
                 </thead>
                 <tbody>
                 {lines.map((line, idx) => {
                     const absoluteIndex = 2 + page * pageSize + idx;
+                    const displayIndex = absoluteIndex - 1;
+
                     return (
-                        <tr key={line.hash ? `${line.hash}-${idx}` : idx}>
+                        <tr
+                            key={line.hash ? `${line.hash}-${idx}` : idx}
+                            onDoubleClick={() => onLineSelect(line, displayIndex)}
+                        >
                             <th className={styles.lineTableID} scope="row">
-                                {absoluteIndex}
+                                {displayIndex}
                             </th>
                             <td>{line.hash}</td>
-                            <td>{line.content}</td>
+                            <td className={styles.contentCell}>{line.content}</td>
                         </tr>
                     );
                 })}
