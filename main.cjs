@@ -99,6 +99,41 @@ app.whenReady().then(() => {
         }
     });
 
+    ipcMain.handle('save-change', async (event, lineData) => {
+        try {
+            const result = nativeAddon.saveChangeToCache(lineData);
+            return { success: true, result };
+        } catch (error) {
+            console.error(error.message);
+            return { success: false, error: error.message };
+        }
+    });
+
+    ipcMain.handle('select-save-location', async  (event) => {
+        const { canceled, filePaths } = await dialog.showOpenDialog({
+            properties: ['promptToCreate'],
+            filters: [
+                { name: ".LOCPACK/BIN Files", extensions: ["locpack", "locpackbin"]}
+            ]
+        });
+
+        if (canceled) {
+            return null;
+        } else {
+            return filePaths[0];
+        }
+    });
+
+    ipcMain.handle('save-to-files', async (event, path) => {
+       try {
+           const result = nativeAddon.saveToFiles(path);
+           return { success: true, result };
+       } catch (error) {
+           console.error(error.message);
+           return { success: false, error: error.message };
+       }
+    });
+
     createWindow();
 
     app.on('activate', () => {

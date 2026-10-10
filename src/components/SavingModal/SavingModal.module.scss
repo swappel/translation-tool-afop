@@ -1,0 +1,99 @@
+@use '../../styles/variables' as var;
+@use '../../styles/mixins' as mix;
+
+.savingModalBackground {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+
+  color: #DDD;
+
+  @include mix.center-center;
+
+  background-color: rgba(20, 20, 20, 0.8);
+}
+
+.savingSelectionBox {
+  background: var.$accent-background-color;
+
+  @include mix.center-center;
+  flex-direction: column;
+
+  max-width: 25%;
+
+  padding: 25px;
+
+  text-align: center;
+
+  border-radius: 12px;
+
+  * {
+    margin-block: 4px;
+    padding: 0;
+  }
+
+  button {
+    background: none;
+    border: solid 2px darkgray;
+    border-radius: 12px;
+
+    min-width: 6em;
+
+    color: rgba(169, 169, 169, 0.54);
+
+    &:hover {
+      transition: background-color 0.4s ease, color 0.4s ease;
+
+      background-color: #333;
+      color: #DDD;
+    }
+  }
+}
+
+.allInputs {
+  text-align: left;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.inputField {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+.inputBox {
+  border: solid darkgray 2px;
+  border-radius: 12px;
+  padding: 6px;
+
+  background: none;
+  width: 100%;
+  color: darkgray;
+
+  &:hover {
+    transition: background-color 0.4s ease, color 0.4s ease;
+
+    background-color: #333;
+    color: #DDD;
+  }
+}
+
+.errorText {
+  color: red;
+  font-size: var.$text-size-s;
+}
+
+.saveButton {
+  font-size: var.$text-size-s;
+
+  padding: 8px;
+
+  &:after {
+    background-color: red;
+    color: red;
+  }
+}

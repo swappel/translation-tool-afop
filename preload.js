@@ -3,7 +3,8 @@ const { contextBridge, ipcRenderer } = require('electron');
 contextBridge.exposeInMainWorld('api', {
    sendToNative: (channel, data) => {
        const validChannels = [
-           'select-file', 'load-files', 'get-total-lines', 'verify-files'
+           'select-file', 'load-files', 'get-total-lines', 'verify-files',
+           'get-lines-range', 'save-change', 'select-save-location'
        ];
        if (validChannels.includes(channel)) {
            return ipcRenderer.invoke(channel, data);
@@ -25,6 +26,14 @@ contextBridge.exposeInMainWorld('api', {
 
     getLinesRange: (startIndex, count) => {
         return ipcRenderer.invoke('get-lines-range', { startIndex, count });
+    },
+
+    saveChange: (lineData) => {
+        return ipcRenderer.invoke('save-change', lineData);
+    },
+
+    saveToFiles: (savePath) => {
+       return ipcRenderer.invoke('save-to-files', savePath);
     },
 
     onNativeEvent: (channel, callback) => {

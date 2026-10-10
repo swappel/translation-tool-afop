@@ -84,7 +84,7 @@ function FileSelectionModal({ onComplete }: FileSelectionModalProps) {
     return (
         <div className={styles.fileSelectionBackground}>
             <div className={styles.fileSelectionBox}>
-                <h1 className={styles.modalTitle}>Select Files</h1>
+                <h1 className={"modalTitle"}>Select Files</h1>
                 <p className={styles.explanation}>
                     Please select the ".locpack" and ".locpackbin" files you want to edit. <br/>
                     They should be a pair, like "menus.locpack" and "menus.locpackbin". <br/>

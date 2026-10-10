@@ -6,9 +6,10 @@ import {clsx} from "clsx";
 interface LineTableProps {
     pageSize: number;
     onLineSelect: (lineData: LocaleLineData, index: number) => void;
+    refreshTrigger?: number;
 }
 
-function LineTable({ pageSize, onLineSelect }: LineTableProps) {
+function LineTable({ pageSize, onLineSelect, refreshTrigger }: LineTableProps) {
     const [lines, setLines] = useState<LocaleLineData[]>([]);
     const [page, setPage] = useState<number>(0);
     const [totalLines, setTotalLines] = useState<number>(0);
@@ -46,7 +47,7 @@ function LineTable({ pageSize, onLineSelect }: LineTableProps) {
         };
 
         fetchChunk();
-    }, [page, pageSize]);
+    }, [page, pageSize, refreshTrigger]);
 
     const commitPageChange = () => {
         const parsed = parseInt(tempPage, 10);

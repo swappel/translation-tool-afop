@@ -2,10 +2,11 @@ import styles from "./SearchBar.module.scss";
 
 interface SearchBarProps {
     onPageSizeChange: (size: number) => void,
-    pageSize: number
+    pageSize: number,
+    onSaveClick: () => void;
 }
 
-function SearchBar({ onPageSizeChange, pageSize }: SearchBarProps) {
+function SearchBar({ onPageSizeChange, pageSize, onSaveClick }: SearchBarProps) {
     return (
         <div className={styles.searchBarContainer}>
             <div className={styles.leftSection}>
@@ -31,7 +32,7 @@ function SearchBar({ onPageSizeChange, pageSize }: SearchBarProps) {
             <div className={styles.rightSection}>
                 <button>Show Changes</button>
                 <button>Load file</button>
-                <button>Save changes</button>
+                <button onClick={onSaveClick}>Save changes</button>
                 <button>Export files</button>
             </div>
         </div>

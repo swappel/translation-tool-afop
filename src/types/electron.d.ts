@@ -1,3 +1,5 @@
+import * as path from "node:path";
+
 export interface ElectronAPI {
     sendToNative: (channel: string, data?: any) => Promise<any>;
     loadFiles: (locpackPath: string, locpackbinPath: string) => Promise<{ success: boolean; result?: any; error?: string }>;
@@ -5,6 +7,9 @@ export interface ElectronAPI {
     verifyFiles: () => Promise<{ success: boolean, error?: string }>;
     onNativeEvent: (channel: string, callback: (...args: any[]) => void) => () => void;
     getLinesRange: (startIndex: number, count: number) => Promise<{ success: boolean; lines?: LocaleLineData[]; error?: string }>;
+    saveChange: (lineData: LocaleLineData) => Promise<{ success: boolean; result?: any; error?: string }>;
+
+    saveToFiles: (path: string) => Promise<{ success: boolean; result?: any; error?: string }>;
 }
 
 export interface LocaleLineData {
