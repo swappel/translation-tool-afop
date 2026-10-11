@@ -1,4 +1,5 @@
 import styles from "./SearchBar.module.scss";
+import {useState} from "react";
 
 interface SearchBarProps {
     onPageSizeChange: (size: number) => void,
@@ -7,6 +8,8 @@ interface SearchBarProps {
 }
 
 function SearchBar({ onPageSizeChange, pageSize, onSaveClick }: SearchBarProps) {
+    const [tempPageSize, setTempPageSize] = useState<number>(pageSize);
+
     return (
         <div className={styles.searchBarContainer}>
             <div className={styles.leftSection}>
@@ -20,8 +23,14 @@ function SearchBar({ onPageSizeChange, pageSize, onSaveClick }: SearchBarProps) 
                 <input
                     className={styles.pageSizeInput}
                     type="number"
-                    value={pageSize}
-                    onChange={(e) => onPageSizeChange(Number(e.target.value))}
+                    value={tempPageSize}
+                    onChange={(e) => setTempPageSize(Number(e.target.value))}
+                    onBlur={() => onPageSizeChange(tempPageSize)}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            onPageSizeChange(tempPageSize);
+                        }
+                    }}
                 />
 
                 <button>More settings...</button>
