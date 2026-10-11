@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 
 interface FileSelectionModalProps {
     onComplete: () => void;
+    isCancelable: boolean;
+    onCancel: () => void;
 }
 
-function FileSelectionModal({ onComplete }: FileSelectionModalProps) {
+function FileSelectionModal({ onComplete, isCancelable, onCancel }: FileSelectionModalProps) {
     const [locpackPath, setLocpackPath] = useState<string>('');
     const [locpackbinPath, setLocpackbinPath] = useState<string>('');
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -149,9 +151,15 @@ function FileSelectionModal({ onComplete }: FileSelectionModalProps) {
                     <p className={styles.errorText}>{errorMessage}</p>
                 )}
 
+                <div className={styles.buttonSection}>
+                {isCancelable && (
+                    <button className={styles.cancelButton} onClick={onCancel} disabled={isScanning}>Cancel</button>
+                )}
+
                 <button className={styles.scanButton} onClick={handleScanFiles} disabled={isScanning}>
                     {isScanning ? 'Scanning...' : 'Scan files'}
                 </button>
+                </div>
             </div>
         </div>
     );
