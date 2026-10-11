@@ -33,7 +33,6 @@ function SearchBar({ onPageSizeChange, pageSize, onSaveClick }: SearchBarProps) 
                 <button>Show Changes</button>
                 <button>Load file</button>
                 <button onClick={onSaveClick}>Save changes</button>
-                <button>Export files</button>
             </div>
         </div>
     );
