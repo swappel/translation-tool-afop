@@ -1,14 +1,109 @@
-const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog, Menu } = require('electron');
 const path = require('path');
 
 const addonPath = app.isPackaged
     ? path.join(process.resourcesPath, 'FoPTransApp_Final.node')
     : path.resolve(__dirname, './backend/build/Release/FoPTransApp_Final.node');
 
+let mainWindow;
+
 const nativeAddon = require(addonPath);
 
+const menuTemplate = [
+    {
+        label: 'File',
+        submenu: [
+            {
+                label: 'Open file...',
+                click: () => {
+                    if (mainWindow) {
+                        mainWindow.webContents.send('menu-action', 'open-file');
+                    }
+                }
+            },
+            {
+                label: 'Reload file',
+                click: () => {
+                    if (mainWindow) {
+                        mainWindow.webContents.send('menu-action', 'reload-file');
+                    }
+                }
+            },
+            {
+                label: 'Save file',
+                click: () => {
+                    if (mainWindow) {
+                        mainWindow.webContents.send('menu-action', 'save-file');
+                    }
+                }
+            },
+            {
+                label: 'Clear changes...',
+                click: () => {
+                     // TODO: Currently a stub. Make something to clear the change vector in backend.
+                }
+            },
+            {
+                label: 'Quit',
+                role: 'quit'
+            }
+        ]
+    },
+    {
+        // TODO: These are complete stubs and def need some stuff
+        label: 'Edit',
+        submenu: [
+            {
+                label: 'Undo',
+                role: 'undo',
+                accelerator: 'Control+Z'
+            },
+            {
+                label: 'Redo',
+                role: 'redo',
+                accelerator: 'Control+Y'
+            },
+            {
+                type: 'separator'
+            },
+            {
+                label: 'Replace',
+                click: () => {
+                    // TODO: This is a stub
+                },
+                accelerator: 'Control+R'
+            },
+            {
+                label: 'Replace all',
+                click: () => {
+                    // TODO: This is a stub
+                }
+            },
+            {
+                label: 'Search',
+                click: () => {
+                    if (mainWindow) {
+                        mainWindow.webContents.send('menu-action', 'search-open')
+                    }
+                }
+            }
+        ]
+    },
+    {
+        label: 'View',
+        submenu: [
+            {
+                label: 'Unsaved changes...',
+                click: () => {
+
+                }
+            }
+        ]
+    }
+]
+
 function createWindow() {
-    const mainWindow = new BrowserWindow({
+    mainWindow = new BrowserWindow({
         width: 1200,
         height: 800,
         webPreferences: {
@@ -18,7 +113,6 @@ function createWindow() {
         },
         name: "A:FoP Localization Tool",
         title: "A:FoP Localization Tool",
-        autoHideMenuBar: true,
         windowStatePersistence: true
     });
 
@@ -30,6 +124,9 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+    const menu = Menu.buildFromTemplate(menuTemplate);
+    Menu.setApplicationMenu(menu);
+
     ipcMain.handle('load-files', async (event, paths) => {
         const { locpackPath, locpackbinPath } = paths;
 

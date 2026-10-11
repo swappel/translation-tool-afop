@@ -37,7 +37,7 @@ contextBridge.exposeInMainWorld('api', {
     },
 
     onNativeEvent: (channel, callback) => {
-       const validChannels = ['translate-response', 'translation-progress'];
+       const validChannels = ['translate-response', 'translation-progress', 'menu-action'];
        if (validChannels.includes(channel)) {
            const subscription = (event, ...args) => callback(...args);
            ipcRenderer.on(channel, subscription);
