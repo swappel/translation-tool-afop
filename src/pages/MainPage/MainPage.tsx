@@ -59,6 +59,11 @@ function MainPage() {
         }
     };
 
+    const handleCancelSaveModal = () => {
+        setSaveLocationModalOpen(false);
+        setLineTableShown(true);
+    }
+
     return (
         <div className={styles.mainContainer}>
             <SearchBar onPageSizeChange={setPageSize} pageSize={pageSize} onSaveClick={handleSaveButtonClick} />
@@ -86,6 +91,7 @@ function MainPage() {
                 {isSaveLocationModalOpen && (
                     <SavingModal
                         onSaveSuccess={onSaveSuccess}
+                        onCancel={handleCancelSaveModal}
                     />
                 )}
             </div>

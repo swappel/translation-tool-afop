@@ -3,9 +3,10 @@ import {useState} from "react";
 
 interface SavingModalProps {
     onSaveSuccess: (newPath: string) => void;
+    onCancel: () => void;
 }
 
-function SavingModal({ onSaveSuccess } : SavingModalProps ){
+function SavingModal({ onSaveSuccess, onCancel } : SavingModalProps ){
     const [path, setPath] = useState<string>('');
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -24,7 +25,7 @@ function SavingModal({ onSaveSuccess } : SavingModalProps ){
         }
 
         onSaveSuccess(path);
-    }
+    };
 
     return (
         <div className={styles.savingModalBackground}>
@@ -59,10 +60,13 @@ function SavingModal({ onSaveSuccess } : SavingModalProps ){
                     <p className={styles.errorText}>{errorMessage}</p>
                 )}
 
-                <button className={styles.saveButton} onClick={handleSaveClick}>Save to files</button>
+                <div className={styles.buttonSection}>
+                    <button className={styles.cancelButton} onClick={onCancel}>Cancel</button>
+                    <button className={styles.saveButton} onClick={handleSaveClick}>Save to files</button>
+                </div>
             </div>
         </div>
     );
 }
 
-export default SavingModal;    
+export default SavingModal;

@@ -87,10 +87,16 @@
   font-size: var.$text-size-s;
 }
 
-.saveButton {
-  font-size: var.$text-size-s;
+.buttonSection {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 
-  padding: 8px;
+  button {
+    font-size: var.$text-size-s;
+
+    padding: 8px;
+  }
 
   &:after {
     background-color: red;
