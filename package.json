@@ -1,12 +1,35 @@
 {
   "name": "translation-tool-afop",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "1.0.0-beta",
+  "author": {
+    "name": "Palkxarunä / swappel",
+    "email": "swappelmail@gmail.com",
+    "url": "https://swappel.de/"
+  },
+  "description": "An app to facilitate the editing of localization files from Avatar: Frontiers of Pandora",
+  "keywords": [
+    "tool",
+    "AFoP",
+    "A:FoP",
+    "FoP",
+    "Avatar: Frontiers of Pandora",
+    "translation",
+    "localization",
+    "editing",
+    "files",
+    "locpack",
+    "locpackbin"
+  ],
+  "homepage": "https://github.com/swappel/translation-tool-afop",
+  "licence": "GPL-3.0",
   "type": "module",
   "main": "main.cjs",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:addon": "git submodule update --remote && npx cmake-js compile --directory ./backend",
+    "build:app": "npm run build && npm run build:addon && electron-builder",
     "lint": "eslint .",
     "preview": "vite preview",
     "start_el": "electron ./"
@@ -39,5 +62,30 @@
     "typescript-eslint": "^8.69.0",
     "typescript-plugin-css-modules": "^5.2.0",
     "vite": "^8.3.0"
+  },
+  "build": {
+    "appId": "de.swappel.afopTransapp",
+    "productName": "A:FoP Localization Tool",
+    "directories": {
+      "output": "dist_app"
+    },
+    "files": [
+      "main.cjs",
+      "preload.js",
+      "dist/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "backend/build/Release/FoPTransApp_Final.node",
+        "to": "FoPTransApp_Final.node"
+      }
+    ],
+    "win": {
+      "target": ["nsis", "portable"]
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Utility"
+    }
   }
 }
