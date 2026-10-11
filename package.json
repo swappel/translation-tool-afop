@@ -26,7 +26,7 @@
   "type": "module",
   "main": "main.cjs",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite & npm run start_el",
     "build": "tsc -b && vite build",
     "build:addon": "git submodule update --remote && npx cmake-js compile --directory ./backend",
     "build:app": "npm run build && npm run build:addon && electron-builder",
